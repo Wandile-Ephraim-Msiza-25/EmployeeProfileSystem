@@ -48,6 +48,7 @@
             dataGridView1 = new DataGridView();
             button2 = new Button();
             button3 = new Button();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -207,7 +208,7 @@
             // 
             button1.BackColor = SystemColors.ControlDarkDark;
             button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(380, 447);
+            button1.Location = new Point(274, 447);
             button1.Name = "button1";
             button1.Size = new Size(105, 49);
             button1.TabIndex = 20;
@@ -228,7 +229,7 @@
             // 
             button2.BackColor = SystemColors.ControlDarkDark;
             button2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(541, 447);
+            button2.Location = new Point(396, 447);
             button2.Name = "button2";
             button2.Size = new Size(105, 49);
             button2.TabIndex = 22;
@@ -240,7 +241,7 @@
             // 
             button3.BackColor = SystemColors.ControlDarkDark;
             button3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.Location = new Point(692, 447);
+            button3.Location = new Point(518, 447);
             button3.Name = "button3";
             button3.Size = new Size(105, 49);
             button3.TabIndex = 23;
@@ -248,11 +249,24 @@
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
+            // button4
+            // 
+            button4.BackColor = SystemColors.ControlDarkDark;
+            button4.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button4.Location = new Point(644, 447);
+            button4.Name = "button4";
+            button4.Size = new Size(105, 49);
+            button4.TabIndex = 24;
+            button4.Text = "Load Employee";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1032, 752);
+            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(dataGridView1);
@@ -305,5 +319,6 @@
         private DataGridView dataGridView1;
         private Button button2;
         private Button button3;
+        private Button button4;
     }
 }

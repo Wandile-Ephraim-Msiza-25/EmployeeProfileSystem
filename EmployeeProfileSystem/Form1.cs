@@ -22,6 +22,7 @@ namespace EmployeeProfileSystem
             con.Open();
             SqlCommand c = new SqlCommand("exec InsertEmp_SP '" + empid + "','" + empname + "','" + city + "','" + age + "','" + sex + "','" + startdate + "','" + contact + "'", con);
             c.ExecuteNonQuery();
+            con.Close();
             MessageBox.Show("Employee Successfully Inserted...");
             GetEmpList();
 
@@ -53,6 +54,7 @@ namespace EmployeeProfileSystem
             con.Open();
             SqlCommand c = new SqlCommand("exec UpdateEmp_SP '" + empid + "','" + empname + "','" + city + "','" + age + "','" + sex + "','" + startdate + "','" + contact + "'", con);
             c.ExecuteNonQuery();
+            con.Close();
             MessageBox.Show("Employee Details Successfully Updated...");
             GetEmpList();
 
@@ -61,20 +63,32 @@ namespace EmployeeProfileSystem
         private void button3_Click(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Are you sure you want to delete this employee and their records?","", MessageBoxButtons.YesNo)==DialogResult.Yes)
-            { 
+            if (MessageBox.Show("Are you sure you want to delete this employee and their records?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 {
-                    int empid = int.Parse(textBox1.Text);
+                    {
+                        int empid = int.Parse(textBox1.Text);
 
-                    con.Open();
-                    SqlCommand c = new SqlCommand("exec DeleteEmp_SP '" + empid + "'", con);
-                    c.ExecuteNonQuery();
-                    MessageBox.Show("Employee Details Successfully Deleted...");
-                    GetEmpList();
+                        con.Open();
+                        SqlCommand c = new SqlCommand("exec DeleteEmp_SP '" + empid + "'", con);
+                        c.ExecuteNonQuery();
+                        con.Close();
+                        MessageBox.Show("Employee Details Successfully Deleted...");
+                        GetEmpList();
 
+                    }
                 }
             }
-        } }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int empid = int.Parse(textBox1.Text);
+            SqlCommand c = new SqlCommand("exec LoadEmp_SP '" + empid + "'", con);
+            SqlDataAdapter sd = new SqlDataAdapter(c);
+            DataTable dt = new DataTable();
+            sd.Fill(dt);
+            dataGridView1.DataSource = dt;
+        }
     }
 }
