@@ -46,6 +46,7 @@
             dateTimePicker1 = new DateTimePicker();
             button1 = new Button();
             dataGridView1 = new DataGridView();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -222,11 +223,24 @@
             dataGridView1.Size = new Size(916, 188);
             dataGridView1.TabIndex = 21;
             // 
+            // button2
+            // 
+            button2.BackColor = SystemColors.ControlDarkDark;
+            button2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Location = new Point(541, 447);
+            button2.Name = "button2";
+            button2.Size = new Size(105, 49);
+            button2.TabIndex = 22;
+            button2.Text = "Update";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1032, 752);
+            Controls.Add(button2);
             Controls.Add(dataGridView1);
             Controls.Add(button1);
             Controls.Add(dateTimePicker1);
@@ -275,5 +289,6 @@
         private DateTimePicker dateTimePicker1;
         private Button button1;
         private DataGridView dataGridView1;
+        private Button button2;
     }
 }

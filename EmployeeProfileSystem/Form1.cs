@@ -42,5 +42,20 @@ namespace EmployeeProfileSystem
         {
             GetEmpList();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int empid = int.Parse(textBox1.Text);
+            string empname = textBox2.Text, city = comboBox1.Text, contact = textBox7.Text, sex = "";
+            double age = double.Parse(textBox4.Text);
+            DateTime startdate = DateTime.Parse(dateTimePicker1.Text);
+            if (radioButton1.Checked == true) { sex = "Male"; } else { sex = "Female"; }
+            con.Open();
+            SqlCommand c = new SqlCommand("exec UpdateEmp_SP '" + empid + "','" + empname + "','" + city + "','" + age + "','" + sex + "','" + startdate + "','" + contact + "'", con);
+            c.ExecuteNonQuery();
+            MessageBox.Show("Employee Details Successfully Updated...");
+            GetEmpList();
+
+        }
     }
 }
