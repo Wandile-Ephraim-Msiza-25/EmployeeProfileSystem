@@ -60,14 +60,21 @@ namespace EmployeeProfileSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int empid = int.Parse(textBox1.Text);
 
-            con.Open();
-            SqlCommand c = new SqlCommand("exec DeleteEmp_SP '" + empid + "'", con);
-            c.ExecuteNonQuery();
-            MessageBox.Show("Employee Details Successfully Deleted...");
-            GetEmpList();
+            if (MessageBox.Show("Are you sure you want to delete this employee and their records?","", MessageBoxButtons.YesNo)==DialogResult.Yes)
+            { 
+            {
+                {
+                    int empid = int.Parse(textBox1.Text);
 
-        }
+                    con.Open();
+                    SqlCommand c = new SqlCommand("exec DeleteEmp_SP '" + empid + "'", con);
+                    c.ExecuteNonQuery();
+                    MessageBox.Show("Employee Details Successfully Deleted...");
+                    GetEmpList();
+
+                }
+            }
+        } }
     }
 }
