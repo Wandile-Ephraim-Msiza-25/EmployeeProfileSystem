@@ -57,5 +57,17 @@ namespace EmployeeProfileSystem
             GetEmpList();
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int empid = int.Parse(textBox1.Text);
+
+            con.Open();
+            SqlCommand c = new SqlCommand("exec DeleteEmp_SP '" + empid + "'", con);
+            c.ExecuteNonQuery();
+            MessageBox.Show("Employee Details Successfully Deleted...");
+            GetEmpList();
+
+        }
     }
 }

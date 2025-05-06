@@ -47,6 +47,7 @@
             button1 = new Button();
             dataGridView1 = new DataGridView();
             button2 = new Button();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -235,11 +236,24 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
+            // button3
+            // 
+            button3.BackColor = SystemColors.ControlDarkDark;
+            button3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Location = new Point(692, 447);
+            button3.Name = "button3";
+            button3.Size = new Size(105, 49);
+            button3.TabIndex = 23;
+            button3.Text = "Delete";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1032, 752);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(dataGridView1);
             Controls.Add(button1);
@@ -290,5 +304,6 @@
         private Button button1;
         private DataGridView dataGridView1;
         private Button button2;
+        private Button button3;
     }
 }
